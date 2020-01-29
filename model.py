@@ -68,7 +68,6 @@ def multi_obj(frame_l=16, joint_n=15, joint_d=3,person=1):
     
     single = one_obj()
     x_0 = single([inp_j_0,inp_j_diff_0])
-    #x_1 = single([inp_j_1,inp_j_diff_1])
       
     x = Maximum()([x_0,x_0])
     
