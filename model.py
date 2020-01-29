@@ -66,9 +66,6 @@ def multi_obj(frame_l=16, joint_n=15, joint_d=3,person=1):
     inp_j_0 = Input(name='inp_j_0', shape=(frame_l, joint_n, joint_d))
     inp_j_diff_0 = Input(name='inp_j_diff_0', shape=(frame_l, joint_n, joint_d))
     
-    #inp_j_1 = Input(name='inp_j_1', shape=(frame_l, joint_n, joint_d))
-    #inp_j_diff_1 = Input(name='inp_j_diff_1', shape=(frame_l, joint_n, joint_d))
-    
     single = one_obj()
     x_0 = single([inp_j_0,inp_j_diff_0])
     #x_1 = single([inp_j_1,inp_j_diff_1])
@@ -86,6 +83,5 @@ def multi_obj(frame_l=16, joint_n=15, joint_d=3,person=1):
     x = Dense(8, activation='sigmoid')(x)
       
     model = Model([inp_j_0,inp_j_diff_0],x)
-    #model = Model([inp_j_0,inp_j_diff_0,inp_j_1,inp_j_diff_1],x)
     
     return model
