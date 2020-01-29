@@ -103,11 +103,3 @@ def zoom(p):
         for n in range(3):
             p_new[:,m,n] = inter.zoom(p[:,m,n],16/l)[:16]
     return p_new
-
-#Switch two persons' position
-def mirror(p_0,p_1):
-    p_0_new = np.copy(p_0)
-    p_1_new = np.copy(p_1)
-    p_0_new[:,:,0] = abs(p_0_new[:,:,0]-1)
-    p_1_new[:,:,0] = abs(p_1_new[:,:,0]-1)
-    return p_0_new, p_1_new
